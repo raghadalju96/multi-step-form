@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to Google Fonts -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card border border-0 shadow-sm">
+      <div class="card-body row w-100">
+        <div class="sidebar col-4 position-relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="274"
+            height="568"
+            fill="none"
+            viewBox="0 0 274 568"
+          >
+            <rect width="274" height="568" fill="#483EFF" rx="10" />
+            <mask
+              id="a"
+              width="274"
+              height="568"
+              x="0"
+              y="0"
+              maskUnits="userSpaceOnUse"
+              style="mask-type: alpha"
+            >
+              <rect width="274" height="568" fill="#fff" rx="10" />
+            </mask>
+            <g mask="url(#a)">
+              <path
+                fill="#6259FF"
+                fill-rule="evenodd"
+                d="M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill="#F9818E"
+                fill-rule="evenodd"
+                d="M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z"
+                clip-rule="evenodd"
+              />
+              <path
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="bevel"
+                stroke-width="5"
+                d="m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798"
+              />
+              <path
+                fill="#FFAF7E"
+                d="M.305 546.891c37.003 0 67-29.997 67-67s-29.997-67-67-67-67 29.997-67 67 29.997 67 67 67Z"
+              />
+            </g>
+          </svg>
+
+          <div
+            class="sidebar-content d-flex flex-column position-relative z-1 p-3 mt-4"
+          >
+            <div class="sidebar-item d-flex align-items-center px-3 mb-4">
+              <button
+                class="step-num active d-flex align-items-center justify-content-center border border-white rounded-circle bg-transparent text-white me-3"
+              >
+                1
+              </button>
+              <div class="step-content text-uppercase">
+                <span class="step-text">step 1</span>
+                <p class="step-title mb-0">your info</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item d-flex align-items-center px-3 mb-4">
+              <button
+                class="step-num d-flex align-items-center justify-content-center border border-white rounded-circle bg-transparent text-white me-3"
+              >
+                2
+              </button>
+              <div class="step-content text-uppercase">
+                <span class="step-text">step 2</span>
+                <p class="step-title mb-0">select plan</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item d-flex align-items-center px-3 mb-4">
+              <button
+                class="step-num d-flex align-items-center justify-content-center border border-white rounded-circle bg-transparent text-white me-3"
+              >
+                3
+              </button>
+              <div class="step-content text-uppercase">
+                <span class="step-text">step 3</span>
+                <p class="step-title mb-0">add onse</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item d-flex align-items-center px-3 mb-4">
+              <button
+                class="step-num d-flex align-items-center justify-content-center border border-white rounded-circle bg-transparent text-white me-3"
+              >
+                4
+              </button>
+              <div class="step-content text-uppercase">
+                <span class="step-text">step 4</span>
+                <p class="step-title mb-0">summary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form col pt-5">
+          <div class="step step-1">
+            <h2 class="form-title">Personal info</h2>
+            <span class="form-text"
+              >Please provide your name, email address, and phone number.</span
+            >
+
+            <form class="mt-5">
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputName"
+                  placeholder="e.g. Stephen King"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPhone" class="form-label"
+                  >Phone Number</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleInputPhone"
+                  placeholder="e.g. +1 234 567 890"
+                />
+              </div>
+            </form>
+
+            <div class="d-flex justify-content-end">
+              <button
+                type="button"
+                class="btn btn-primary mt-5 border-0 ms next-step"
+                data-step="1"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+
+          <div class="step step-2 d-none">
+            step-2
+
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary mt-5 border-0 ms prev-step"
+                data-step="2"
+              >
+                Go Back
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary mt-5 border-0 ms next-step"
+                data-step="2"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+
+          <div class="step step-3 d-none">
+            step-3
+
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary mt-5 border-0 ms prev-step"
+                data-step="3"
+              >
+                Go Back
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary mt-5 border-0 ms next-step"
+                data-step="3"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+
+          <div class="step step-4 d-none">
+            step-4
+
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary mt-5 border-0 ms prev-step"
+                data-step="4"
+              >
+                Go Back
+              </button>
+              <button type="button" class="btn btn-primary mt-5 border-0 ms">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
