@@ -17,27 +17,6 @@
   --font-family-primary: "Ubuntu", sans-serif;
 }
 
-/* @font-face {
-  font-family: "Ubuntu";
-  src: url("/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src: url("/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src: url("/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: bold;
-} */
-
 body {
   font-family: var(--font-family-primary);
   background-color: var(--color-magnolia);
@@ -56,6 +35,12 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .step-num {
@@ -112,8 +97,125 @@ body {
   height: 48px;
 }
 
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #164a8a !important;
+  font-weight: 500 !important;
+}
+
 .btn-secondary {
   background-color: transparent;
   border: none;
   color: var(--color-cool-gray);
+  font-weight: 500;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--color-primary-marine-blue) !important;
+}
+
+.plans {
+  gap: 20px;
+}
+
+.plan {
+  cursor: pointer;
+  height: 183px;
+  width: 150px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 2px solid var(--color-light-gray);
+  /* background: var(--color-alabaster); */
+}
+
+.plan.active {
+  background-color: var(--color-alabaster);
+  border: 2px solid var(--color-primary-purplish-blue);
+}
+
+.plan-name {
+  color: var(--color-primary-marine-blue);
+  font-weight: 500;
+}
+
+.plan-price {
+  color: var(--color-cool-gray);
+  font-size: 14px;
+}
+
+.billing-cycle {
+  background-color: var(--color-alabaster);
+  width: 450px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.billing-cycle svg {
+  cursor: pointer;
+}
+
+.billing-cycle-lable {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-cool-gray);
+}
+
+.billing-cycle-lable.active {
+  color: var(--color-primary-marine-blue);
+}
+
+.months-free {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-primary-marine-blue);
+}
+
+.custom-checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--color-primary-purplish-blue);
+}
+
+.custom-checkbox .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: var(--color-primary-purplish-blue);
+  border-color: var(--color-primary-purplish-blue);
+}
+
+.addon-title {
+  font-weight: bold;
+}
+
+.addon-description {
+  font-size: 0.875rem;
+  color: var(--color-cool-gray);
+}
+
+.addon-price {
+  font-weight: bold;
+  color: var(--color-primary-marine-blue);
+}
+
+.form-check .form-check-input {
+  margin-right: 1rem;
+  margin-left: 0;
 }
