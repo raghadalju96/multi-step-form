@@ -25,8 +25,6 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Link to Google Fonts -->
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="d-flex justify-content-center align-items-center vh-100">
@@ -132,7 +130,7 @@
           </div>
         </div>
         <div class="form col w-100 px-5 pt-5">
-          <form class="h-100">
+          <form id="multiStepForm" class="multi-form h-100">
             <div class="step step-1">
               <h2 class="form-title">Personal info</h2>
               <span class="form-text"
@@ -146,6 +144,7 @@
                   type="text"
                   class="form-control"
                   id="exampleInputName"
+                  name="name"
                   placeholder="e.g. Stephen King"
                 />
               </div>
@@ -158,6 +157,7 @@
                   type="email"
                   class="form-control"
                   id="exampleInputEmail1"
+                  name="email"
                   aria-describedby="emailHelp"
                   placeholder="e.g. stephenking@lorem.com"
                 />
@@ -171,6 +171,7 @@
                   type="number"
                   class="form-control"
                   id="exampleInputPhone"
+                  name="phone"
                   placeholder="e.g. +1 234 567 890"
                 />
               </div>
@@ -197,6 +198,7 @@
                   class="plan"
                   data-plan-name="Arcade"
                   data-plan-price="$9/mo"
+                  data-plan-price-yearly="$90/yr"
                 >
                   <div class="icon">
                     <svg
@@ -229,6 +231,8 @@
                   class="plan"
                   data-plan-name="Advanced"
                   data-plan-price="$12/mo"
+                  data-plan-price-yearly="$120/yr"
+
                 >
                   <div class="icon">
                     <svg
@@ -257,7 +261,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="plan" data-plan-name="Pro" data-plan-price="$15/mo">
+                <div class="plan" data-plan-name="Pro" data-plan-price="$15/mo"
+                data-plan-price-yearly="$150/yr"
+                >
                   <div class="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -347,7 +353,7 @@
                 >Add-ons help enhance your gaming experience.</span
               >
               <div class="form-check custom-checkbox my-3 p-3 border rounded">
-                <input class="form-check-input" type="checkbox" id="addon1" />
+                <input class="form-check-input" type="checkbox" id="addon1" name="addons" value="Online service +$1/mo" />
                 <label
                   class="form-check-label d-flex justify-content-between align-items-center w-100"
                   for="addon1"
@@ -358,11 +364,13 @@
                       >Access to multiplayer games</span
                     >
                   </div>
-                  <span class="addon-price">+$1/mo</span>
+                  <span class="addon-price monthly-price">+$1/mo</span>
+                  <span class="addon-price yearly-price d-none">+$10/yr</span>
+
                 </label>
               </div>
               <div class="form-check custom-checkbox my-3 p-3 border rounded">
-                <input class="form-check-input" type="checkbox" id="addon2" />
+                <input class="form-check-input" type="checkbox" id="addon2" name="addons" value="Online service +$2/mo" />
                 <label
                   class="form-check-label d-flex justify-content-between align-items-center w-100"
                   for="addon2"
@@ -373,11 +381,13 @@
                       >Extra 1TB of cloud save</span
                     >
                   </div>
-                  <span class="addon-price">+$2/mo</span>
+                  <span class="addon-price  monthly-price">+$2/mo</span>
+                  <span class="addon-price yearly-price d-none">+$20/yr</span>
+
                 </label>
               </div>
               <div class="form-check custom-checkbox my-3 p-3 border rounded">
-                <input class="form-check-input" type="checkbox" id="addon3" />
+                <input class="form-check-input" type="checkbox" id="addon3" name="addons" value="Online service +$3/mo"/>
                 <label
                   class="form-check-label d-flex justify-content-between align-items-center w-100"
                   for="addon3"
@@ -388,7 +398,9 @@
                       >Custom theme on your profile</span
                     >
                   </div>
-                  <span class="addon-price">+$2/mo</span>
+                  <span class="addon-price  monthly-price">+$2/mo</span>
+                  <span class="addon-price yearly-price d-none">+$20/yr</span>
+
                 </label>
               </div>
 
@@ -411,7 +423,33 @@
             </div>
 
             <div class="step step-4 d-none">
-              step-4
+              <h2 class="form-title">Finishing up</h2>
+              <span class="form-text">Double-check everything looks OK before confirming.</span>
+              
+              <div class="summary-box p-3 my-4 border rounded">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    <span class="summary-plan-name">Arcade (Monthly)</span><br>
+                    <a href="#" class="summary-change-link">Change</a>
+                  </div>
+                  <div class="summary-plan-price">$9/mo</div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="summary-addon-name">Online service</div>
+                  <div class="summary-addon-price">+$1/mo</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="summary-addon-name">Larger storage</div>
+                  <div class="summary-addon-price">+$2/mo</div>
+                </div>
+              </div>
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="summary-monthly-price">Total (per month)</span>
+                <span class="summary-total-price">+$12/mo</span>
+              </div>
+    
 
               <div class="d-flex justify-content-between mt-auto mb-2">
                 <button
@@ -421,14 +459,35 @@
                 >
                   Go Back
                 </button>
-                <button type="button" class="btn btn-primary mt-5 border-0 ms">
+                <button type="button" class="btn btn-primary mt-5 border-0 confirm-step ms"
+                data-step="4">
                   Confirm
                 </button>
               </div>
             </div>
           </form>
+          <div class="step step-5 d-none text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <g fill="none">
+                  <circle cx="40" cy="40" r="40" fill="#F9818E"/>
+                  <path fill="#E96170" d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z"/>
+                  <path fill="#FFF" d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z"/>
+                </g>
+              </svg>
+              <h2 class="form-title mt-4">Thank you!</h2>
+              <p class="form-text mt-2">
+                Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="attribution mt-3">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Raghad Aljuaid</a>.
     </div>
 
     <script src="script.js"></script>

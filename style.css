@@ -20,6 +20,8 @@
 body {
   font-family: var(--font-family-primary);
   background-color: var(--color-magnolia);
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
@@ -201,6 +203,12 @@ body {
   border-color: var(--color-primary-purplish-blue);
 }
 
+.checked-background {
+  background-color:  #F8F9FF !important;
+  border: 1px solid var(--color-primary-purplish-blue);
+
+}
+
 .addon-title {
   font-weight: bold;
 }
@@ -219,3 +227,40 @@ body {
   margin-right: 1rem;
   margin-left: 0;
 }
+
+
+.summary-box {
+  background-color: var(--color-alabaster);
+  border: 1px solid var(--color-light-gray);
+}
+
+.summary-plan-name {
+  font-weight: bold;
+  color: var(--color-primary-marine-blue);
+}
+
+.summary-change-link {
+  color: var(--color-cool-gray);
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.summary-plan-price,
+.summary-addon-price{
+  font-weight: bold;
+  color: var(--color-primary-marine-blue);
+}
+
+.summary-total-price {
+  font-weight: 700;
+  color: var(--color-primary-purplish-blue);
+  font-size: 20px;
+}
+
+.summary-addon-name,
+.summary-monthly-price {
+  color: var(--color-cool-gray);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

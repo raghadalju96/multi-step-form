@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const billingCycleLabels = document.querySelectorAll(".billing-cycle-lable");
   const plansContainer = document.querySelector(".plans");
   const plans = document.querySelectorAll(".plan");
+  const checkBoxesContainer = document.querySelectorAll('.form-check')
+  const confirmButton = document.querySelector(".confirm-step");
+  const form = document.getElementById("multiStepForm");
 
   nextSteps.forEach((nextStep) => {
     nextStep.addEventListener("click", () => {
@@ -51,12 +54,29 @@ document.addEventListener("DOMContentLoaded", () => {
       yearlyPrices.forEach((price) => price.classList.toggle("d-none"));
     }
   });
+
+  checkBoxesContainer.forEach(checkBoxesContainer => {
+    checkBoxesContainer.addEventListener('change', (event) =>{
+     const checkedBox = event.target.closest('.form-check-input')
+    if(!checkedBox) return;
+    checkBoxesContainer.classList.toggle('checked-background')
+    })
+  })
+
+  confirmButton.addEventListener("click", () => {
+    showStep(5);
+    const formData = new FormData(form);
+    const formObject = Object.fromEntries(formData.entries());
+    console.log("Form Data: ", formObject);
+  });
 });
 
 function showStep(num) {
   const steps = document.querySelectorAll(`.step`);
   const stepNums = document.querySelectorAll(".step-num");
+  const multiForm = document.querySelector('.multi-form')
 
+  if(num === 5) multiForm.classList.add('d-none');
   steps.forEach((step, index) => {
     if (index === num - 1) step.classList.remove("d-none");
     else step.classList.add("d-none");
