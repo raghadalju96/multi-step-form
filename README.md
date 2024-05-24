@@ -1,7 +1,5 @@
 # Frontend Mentor - Multi-step form
 
-![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 This is a solution to the Multi-step Form challenge on [Frontend Mentor](https://www.frontendmentor.io). The goal was to build a multi-step form that closely matches the provided design.
