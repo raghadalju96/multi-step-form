@@ -204,9 +204,8 @@ body {
 }
 
 .checked-background {
-  background-color:  #F8F9FF !important;
+  background-color: #f8f9ff !important;
   border: 1px solid var(--color-primary-purplish-blue);
-
 }
 
 .addon-title {
@@ -228,7 +227,6 @@ body {
   margin-left: 0;
 }
 
-
 .summary-box {
   background-color: var(--color-alabaster);
   border: 1px solid var(--color-light-gray);
@@ -246,7 +244,7 @@ body {
 }
 
 .summary-plan-price,
-.summary-addon-price{
+.summary-addon-price {
   font-weight: bold;
   color: var(--color-primary-marine-blue);
 }
@@ -262,5 +260,10 @@ body {
   color: var(--color-cool-gray);
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
